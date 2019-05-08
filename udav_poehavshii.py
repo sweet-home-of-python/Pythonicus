@@ -19,5 +19,3 @@ while True:
             x3+=1   
     pygame.time.delay(10) 
     pygame.display.update()
-   
-   

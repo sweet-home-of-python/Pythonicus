@@ -102,5 +102,11 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+
+
 .vs
 .vs/
+
+slnx.sqlite
+VSWorkspaceState.json
