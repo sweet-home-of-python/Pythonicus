@@ -3,14 +3,26 @@ import os
 
 data = '2018-05-08'
 
-rates = ExchangeRates(data)
-name = rates['USD'].name
-value = rates['USD'].value
-nam = 'dolar'
-val = '123'
-
 os.system('cls')
+print('Что смотрим? USD или EUR?')
+cons = input('Введи сюда: ')
+os.system('cls')
+if cons == '':
+    print('Ошибка! Выбрана валюта по умолчанию')
+    type = 'USD'
+elif cons in ('USD','usd','dollar','доллар'):
+    type = 'USD'
+elif cons in ('EUR','eur','euro','евро'):
+    type = 'EUR'
+else:
+    type = 'USD'
+
+
+rates = ExchangeRates(data)
+name = rates[type].name
+value = rates[type].value
+
 print('''Курс валюты! v0.1
 Название: {} 
 Дата: {} 
-Значение: {}'''.format(name,data,value))
+Значение: {} руб.'''.format(name,data,value))
