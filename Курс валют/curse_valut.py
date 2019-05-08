@@ -8,13 +8,14 @@ print('Что смотрим? USD или EUR?')
 cons = input('Введи сюда: ')
 os.system('cls')
 if cons == '':
-    print('Ошибка! Выбрана валюта по умолчанию')
+    print('Путое значение! Выбрана валюта по умолчанию')
     type = 'USD'
 elif cons in ('USD','usd','dollar','доллар'):
     type = 'USD'
 elif cons in ('EUR','eur','euro','евро'):
     type = 'EUR'
 else:
+    print('Ошибка! Выбрана валюта по умолчанию')
     type = 'USD'
 
 
