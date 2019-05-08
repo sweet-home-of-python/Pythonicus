@@ -5,6 +5,7 @@ x1 = 0
 x2 = 0
 x3 = 0 
 
+
 sc = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
 
 while True:
