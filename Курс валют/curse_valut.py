@@ -1,7 +1,7 @@
 from pycbrf.toolbox import ExchangeRates
 import os
 
-data = '2018-05-08'
+data = '2019-05-08'
 
 os.system('cls')
 print('Что смотрим? USD или EUR?')
