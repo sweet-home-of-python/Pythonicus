@@ -1,8 +1,8 @@
 import pygame
 import time 
 FPS = 60
-W = 700  # ширина экрана
-H = 300  # высота экрана
+W = 1200  # ширина экрана
+H = 700  # высота экрана
 WHITE = (255, 255, 255)
 black = (0, 0, 0)
  
@@ -22,32 +22,32 @@ Play = True
 def polet(z,vec,x,y):
     if vec == 6:
         while x < z:
-            pygame.time.delay(5)
+            pygame.time.delay(2)
             sc.fill(WHITE)
-            x += 1
+            x += 2
             pygame.draw.circle(sc, black, (x, y), r) 
             pygame.display.update()
     if vec == 4:
         while x > z:
-            pygame.time.delay(5)
+            pygame.time.delay(2)
             sc.fill(WHITE)
-            x -= 1
+            x -= 2
             pygame.draw.circle(sc, black, (x, y), r) 
             pygame.display.update()
         
     if vec == 8:
         while y > z:
-            pygame.time.delay(5)
+            pygame.time.delay(2)
             sc.fill(WHITE)
-            y -= 1
+            y -= 2
             pygame.draw.circle(sc, black, (x, y), r) 
             pygame.display.update()
                   
     if vec == 2:
         while y < z:
-            pygame.time.delay(5)
+            pygame.time.delay(2)
             sc.fill(WHITE)
-            y += 1
+            y += 2
             pygame.draw.circle(sc, black, (x, y), r) 
             pygame.display.update()
     return x,y
