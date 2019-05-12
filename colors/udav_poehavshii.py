@@ -4,7 +4,7 @@ pygame.init()
 
 o = 0
 sc = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
-while o != 3 :
+while o != 1 :
     x1 = 0 
     x2 = 0
     x3 = 0 

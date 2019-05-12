@@ -9,11 +9,7 @@ black = (0, 0, 0)
 pygame.init()
 sc = pygame.display.set_mode((W, H))
 clock = pygame.time.Clock()
-
-
-  
-
-   
+ 
 # координаты и радиус круга
 x = W // 2
 y = H // 2
