@@ -1,11 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\collision",
-    "\\colors",
-    "\\step_by_step",
-    "\\Курс валют"
+    "\\currency_value\\__pycache__"
   ],
-  "SelectedNode": "\\step_by_step\\f1.py",
+  "SelectedNode": "\\step_by_step",
   "PreviewInSolutionExplorer": false
 }
