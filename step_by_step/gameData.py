@@ -1,7 +1,7 @@
 from pygame import draw
 from random import randint
 class staticObjects(object):
-    def __init__(self,name,pos,*params):
+    def __init__(self,name,*params):
         self.name = ''
         self.pos = (0,0,0,0)
         self.params = [color,opacity]
