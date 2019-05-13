@@ -51,5 +51,6 @@ print('\nКонвертер:')
 val = int(input('Сколько у тебя валюты?: '))
 
 print('Результат: {} руб.'.format(val * value))
+input()
 
 print('\ncreate by YarLikViD. Ver 1.0a')
