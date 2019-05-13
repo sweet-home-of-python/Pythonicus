@@ -1,9 +1,10 @@
 {
   "ExpandedNodes": [
     "",
+    "\\collision",
     "\\step_by_step",
     "\\Курс валют"
   ],
-  "SelectedNode": "\\step_by_step\\f1.py",
+  "SelectedNode": "\\collision\\collision.py",
   "PreviewInSolutionExplorer": false
 }
