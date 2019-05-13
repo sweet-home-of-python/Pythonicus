@@ -23,6 +23,9 @@ def polet(z,vec,x,y):
             x += 2
             pygame.draw.circle(sc, black, (x, y), r) 
             pygame.display.update()
+            if vec != 6:
+                break
+                
     if vec == 4:
         while x > z:
             pygame.time.delay(2)
