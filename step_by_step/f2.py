@@ -5,6 +5,7 @@ W = 1200  # ширина экрана
 H = 700  # высота экрана
 WHITE = (255, 255, 255)
 black = (0, 0, 0)
+some = (100, 50, 200)
 STOP = "stop" 
 RIGHT = "to the right"
 LEFT = "to the left"
@@ -38,13 +39,13 @@ def polet(vec,x):
         while i.key == pygame.K_d:
             sc.fill(WHITE)
             x+=1
-            pygame.draw.circle(sc, black, (x, y), r)
+            pygame.draw.circle(sc, some, (x, y), r)
             pygame.display.update()
     return x 
 
 while Play:
     sc.fill(WHITE)
-    pygame.draw.circle(sc, black, (x, y), r)
+    pygame.draw.circle(sc, some, (x, y), r)
     pygame.draw.rect(sc, black, (x1w, y1w, x2w, y2w))
     pygame.display.update()
     
