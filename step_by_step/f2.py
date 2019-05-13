@@ -67,7 +67,7 @@ while Play:
             if i.key in [pygame.K_LEFT, pygame.K_RIGHT, pygame.K_UP, pygame.K_DOWN]:
                 motion = STOP
         
-    if x in range(x1w-50,550) and y in range(y1w-50,600): #обработка столкновения
+    if x in range(x1w-50,550) and y in range(y1w-30,580) or x in range(x1w-30,530) and y in range(y1w-50,600) : #обработка столкновения
         x=prestep_x
         y=prestep_y
     if motion == LEFT :
