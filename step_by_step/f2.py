@@ -101,6 +101,7 @@ while Play:
                 motion = UP
             if i.key == pygame.K_DOWN:
                 motion = DOWN
+            
         elif i.type == pygame.KEYUP:
             if i.key in [pygame.K_LEFT, pygame.K_RIGHT, pygame.K_UP, pygame.K_DOWN]:
                 motion = STOP
