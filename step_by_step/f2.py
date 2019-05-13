@@ -1,5 +1,36 @@
 import pygame
 import time 
+
+
+from pygame import draw
+from random import randint
+class staticObjects(object):
+    def __init__(self,name):
+        self.name = ''
+        self.pos = (0,0,0,0)
+        self.type = 'rect'
+        #self.params = [color,opacity]
+        self.colors = {'black': (0,0,0),
+                       'white':(255,255,255),
+                       'red':(255,0,0),
+                       'green':(0,255,0),
+                       'blue':(0,0,255)
+                       }
+        self.types = ('rect',
+                      'circle'
+                     )
+
+
+    def random_rect(self):
+        self.type = 'rect'
+        self.pos = (randint(0,1000),randint(0,600), randint(0,500), randint(0,500)) 
+
+    def drow(self,screen):
+        if self.type == 'rect':
+            draw.rect(screen, self.colors['black'], self.pos)
+
+
+
 FPS = 60
 W = 1200  # ширина экрана
 H = 700  # высота экрана
@@ -33,6 +64,11 @@ motion = STOP
 def _is_wall(x,y):
     pass
     
+ob1 = staticObjects('one')
+#ob2 = staticObjects('two')
+ob1.random_rect()
+
+
 
 def polet(vec,x):
     if vec ==6:
@@ -42,11 +78,13 @@ def polet(vec,x):
             pygame.draw.circle(sc, some, (x, y), r)
             pygame.display.update()
     return x 
-
+x1w, y1w, x2w, y2w = ob1.pos
 while Play:
     sc.fill(WHITE)
     pygame.draw.circle(sc, some, (x, y), r)
-    pygame.draw.rect(sc, black, (x1w, y1w, x2w, y2w))
+        
+    ob1.drow(sc)
+    
     pygame.display.update()
     
     for i in pygame.event.get():
@@ -57,29 +95,29 @@ while Play:
             
             if i.key == pygame.K_LEFT:
                 motion = LEFT
-            elif i.key == pygame.K_RIGHT:
+            if i.key == pygame.K_RIGHT:
                 motion = RIGHT
-            elif i.key == pygame.K_UP:
+            if i.key == pygame.K_UP:
                 motion = UP
-            elif i.key == pygame.K_DOWN:
+            if i.key == pygame.K_DOWN:
                 motion = DOWN
         elif i.type == pygame.KEYUP:
             if i.key in [pygame.K_LEFT, pygame.K_RIGHT, pygame.K_UP, pygame.K_DOWN]:
                 motion = STOP
         
-    if x in range(x1w-50,550) and y in range(y1w-30,580) or x in range(x1w-30,530) and y in range(y1w-50,600) : #обработка столкновения
+    if x in range(x1w-50,x1w+x2w+50) and y in range(y1w-30,y1w+y2w+30) or x in range(x1w-30,x1w+x2w+30) and y in range(y1w-50,y1w+y2w+50) : #обработка столкновения
         x=prestep_x
         y=prestep_y
     if motion == LEFT :
         prestep_x = x
         x -= 3
-    elif motion == RIGHT :
+    if motion == RIGHT :
         prestep_x = x
         x += 3
     if motion == UP :
        prestep_y = y
        y -= 3
-    elif motion == DOWN :
+    if motion == DOWN :
         prestep_y = y
         y += 3
     clock.tick(FPS)

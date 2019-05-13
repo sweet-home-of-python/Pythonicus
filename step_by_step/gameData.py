@@ -1,9 +1,9 @@
 from pygame import draw
-from random import randomint
+from random import randint
 class staticObjects(object):
-    def __init__(self,name,pos,*params):
+    def __init__(self,name,*params):
         self.name = ''
-        self.pos4= (0,0,0,0)
+        self.pos = (0,0,0,0)
         self.params = [color,opacity]
         self.colors = {'black': (0,0,0),
                        'white':(255,255,255),
@@ -14,5 +14,6 @@ class staticObjects(object):
 
 
     def random_rect(self,screen):
-        draw.rect(screen, self.colors['black'], self.pos4)
+        self.pos = (randint(0,1000),randint(0,1000), randint(0,100), randint(0,100))
+        draw.rect(screen, self.colors['black'], self.pos)
         return self.pos
