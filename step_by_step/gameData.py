@@ -3,8 +3,7 @@ from random import randomint
 class staticObjects(object):
     def __init__(self,name,pos,*params):
         self.name = ''
-        self.pos2 = (0,0)
-        self.pos4 = (0,1,2,3)
+        self.pos4= (0,0,0,0)
         self.params = [color,opacity]
         self.colors = {'black': (0,0,0),
                        'white':(255,255,255),
@@ -16,4 +15,4 @@ class staticObjects(object):
 
     def random_rect(self,screen):
         draw.rect(screen, self.colors['black'], self.pos4)
-        return self.pos4
+        return self.pos
