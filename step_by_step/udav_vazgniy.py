@@ -38,8 +38,15 @@ def _is_wall(x,y):
     pass
 
 ob1 = StaticObject('one')
+ob2 = StaticObject('two')
+ob35 = StaticObject('two')
+ob43 = StaticObject('two')
+ob12 = StaticObject('two')
+
 
 print (GameObject.objects)
+
+
 
 
 
@@ -51,12 +58,13 @@ def polet(vec,x):
             pygame.draw.circle(sc, some, (x, y), r)
             pygame.display.update()
     return x 
-x1w, y1w, x2w, y2w = ob1.pos
+#x1w, y1w, x2w, y2w = ob1.pos
 while Play:
     sc.fill(WHITE)
     pygame.draw.circle(sc, some, (x, y), r)
         
-    ob1.drow(sc)
+    for obj_tag in GameObject.objects:
+        GameObject.objects[obj_tag].draw(sc)
     
     pygame.display.update()
     
@@ -79,7 +87,7 @@ while Play:
             if i.key in [pygame.K_LEFT, pygame.K_RIGHT, pygame.K_UP, pygame.K_DOWN]:
                 motion = STOP
         
-    if x in range(x1w-50,x1w+x2w+50) and y in range(y1w-30,y1w+y2w+30) or x in range(x1w-30,x1w+x2w+30) and y in range(y1w-50,y1w+y2w+50) : #обработка столкновения
+    if processingCollision((x,y)):
         x=prestep_x
         y=prestep_y
     if motion == LEFT :

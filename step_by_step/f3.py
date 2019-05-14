@@ -27,7 +27,7 @@ y = H // 2
 r = 50
 Play = True 
 motion = STOP
-ob1 = staticObjects('one')
+ob1 = StaticObject('one')
 ob1.random_rect()
 x1w, y1w, x2w, y2w = ob1.pos
 while Play:
