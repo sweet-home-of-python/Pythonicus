@@ -31,13 +31,13 @@ y = H // 2
 r = 50
 Play = True 
 motion = STOP
-ob1 = staticObjects('one')
+ob1 = StaticObject('one')
 ob1.random_rect()
 x1w, y1w, x2w, y2w = ob1.pos
 while Play:
     sc.fill(WHITE)
     pygame.draw.circle(sc, some, (x, y), r)
-    ob1.drow(sc)
+    ob1.draw(sc)
     pygame.display.update()
     for i in pygame.event.get():
         if i.type == pygame.QUIT:
@@ -61,7 +61,7 @@ while Play:
             motion = U_L
         if keys[pygame.K_y]:
             ob1.random_rect()
-            ob1.drow(sc)
+            ob1.draw(sc)
             x1w, y1w, x2w, y2w = ob1.pos
         elif i.type == pygame.KEYUP:
             if i.key in [pygame.K_LEFT, pygame.K_RIGHT, pygame.K_UP, pygame.K_DOWN]:
