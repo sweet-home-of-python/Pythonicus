@@ -36,10 +36,10 @@ Play = True
 motion = STOP
 def _is_wall(x,y):
     pass
-    
-ob1 = staticObjects('one')
-#ob2 = staticObjects('two')
-ob1.random_rect()
+
+ob1 = StaticObject('one')
+
+print (GameObject.objects)
 
 
 
