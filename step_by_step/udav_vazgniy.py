@@ -15,6 +15,10 @@ RIGHT = "to the right"
 LEFT = "to the left"
 UP = "up"
 DOWN = "down"
+D_R = "dr"
+D_L ="dl"
+U_R ="ur"
+U_L ="ul"
 go = 1
 prestep_x = W // 2
 prestep_y = H // 2
@@ -38,16 +42,14 @@ def _is_wall(x,y):
     pass
 
 ob1 = StaticObject('one')
-ob2 = StaticObject('two')
-ob35 = StaticObject('two')
-ob43 = StaticObject('two')
-ob12 = StaticObject('two')
+
 
 
 print (GameObject.objects)
 
 
-
+iii = 0
+objects = {}
 
 
 def polet(vec,x):
@@ -72,17 +74,26 @@ while Play:
         
         if i.type == pygame.QUIT:
             Play = False
-        elif i.type == pygame.KEYDOWN:
-            
-            if i.key == pygame.K_LEFT:
-                motion = LEFT
-            if i.key == pygame.K_RIGHT:
-                motion = RIGHT
-            if i.key == pygame.K_UP:
-                motion = UP
-            if i.key == pygame.K_DOWN:
-                motion = DOWN
-            
+        keys = pygame.key.get_pressed()
+        if keys[pygame.K_LEFT]:
+            motion = LEFT
+        if keys[pygame.K_RIGHT]:
+            motion = RIGHT
+        if keys[pygame.K_UP]:
+            motion = UP
+        if keys[pygame.K_DOWN]:
+            motion = DOWN
+        if keys[pygame.K_DOWN] and keys[pygame.K_RIGHT]:
+            motion = D_R
+        if keys[pygame.K_DOWN] and keys[pygame.K_LEFT]:
+            motion = D_L
+        if keys[pygame.K_UP] and keys[pygame.K_RIGHT]:
+            motion = U_R
+        if keys[pygame.K_UP] and keys[pygame.K_LEFT]:
+            motion = U_L
+        if keys[pygame.K_y]:
+            iii+=1
+            objects[iii] = StaticObject('obj')
         elif i.type == pygame.KEYUP:
             if i.key in [pygame.K_LEFT, pygame.K_RIGHT, pygame.K_UP, pygame.K_DOWN]:
                 motion = STOP
@@ -102,4 +113,24 @@ while Play:
     if motion == DOWN :
         prestep_y = y
         y += 3
+    if motion == D_R :
+        prestep_x = x
+        prestep_y = y
+        y += 5
+        x += 5
+    if motion == D_L :
+        prestep_x = x
+        prestep_y = y
+        y += 5
+        x -= 5
+    if motion == U_R :
+        prestep_x = x
+        prestep_y = y
+        y -= 5
+        x += 5
+    if motion == U_L :
+        prestep_x = x
+        prestep_y = y
+        y -= 5
+        x -= 5
     clock.tick(FPS)
