@@ -41,15 +41,8 @@ motion = STOP
 def _is_wall(x,y):
     pass
 
-ob1 = StaticObject('one')
-
-
 
 print (GameObject.objects)
-
-
-iii = 0
-objects = {}
 
 
 
@@ -84,8 +77,12 @@ while Play:
         if keys[pygame.K_UP] and keys[pygame.K_LEFT]:
             motion = U_L
         if keys[pygame.K_y]:
-            iii+=1
-            objects[iii] = StaticObject('obj')
+            StaticObject()
+        if keys[pygame.K_r]:
+            if len(GameObject.objects) > 0:
+                del GameObject.objects['staticObject' + str(len(GameObject.objects)-1)]
+        if keys[pygame.K_r] and keys[pygame.K_e]:
+             GameObject.objects = {}
         elif i.type == pygame.KEYUP:
             if i.key in [pygame.K_LEFT, pygame.K_RIGHT, pygame.K_UP, pygame.K_DOWN]:
                 motion = STOP

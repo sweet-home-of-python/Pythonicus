@@ -3,19 +3,18 @@ from random import randint
 
 class GameObject:
     objects = {}
+    key_objects = []
  
 
 
 class StaticObject(GameObject):
       
-    def __init__(self,name,desc = 'static object'):
-        
-        self.name = ''  
+    def __init__(self,desc = 'static object'):
+  
         self.class_name = 'staticObject' + str(len(self.objects))
         self.class_tag = 'staticObject'
         self.desc = desc
-            
-                
+                          
         self.pos = (0,0,0,0)
         self.type = 'rect'
         #self.params = [color,opacity]
@@ -32,7 +31,8 @@ class StaticObject(GameObject):
         self.random_rect()
 
         GameObject.objects[self.class_name] = self
-         
+        GameObject.key_objects.append(self.class_name) 
+
     def random_rect(self):
         self.type = 'rect'
         self.pos = (randint(0,1000),randint(0,600), randint(0,500), randint(0,500)) 
