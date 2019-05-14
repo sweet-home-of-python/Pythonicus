@@ -3,7 +3,6 @@ from random import randint
 
 class GameObject:
     objects = {}
-    key_objects = []
  
 
 
@@ -31,7 +30,7 @@ class StaticObject(GameObject):
         self.random_rect()
 
         GameObject.objects[self.class_name] = self
-        GameObject.key_objects.append(self.class_name) 
+       
 
     def random_rect(self):
         self.type = 'rect'
