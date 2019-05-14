@@ -52,15 +52,7 @@ iii = 0
 objects = {}
 
 
-def polet(vec,x):
-    if vec ==6:
-        while i.key == pygame.K_d:
-            sc.fill(WHITE)
-            x+=1
-            pygame.draw.circle(sc, some, (x, y), r)
-            pygame.display.update()
-    return x 
-#x1w, y1w, x2w, y2w = ob1.pos
+
 while Play:
     sc.fill(WHITE)
     pygame.draw.circle(sc, some, (x, y), r)
@@ -103,16 +95,16 @@ while Play:
         y=prestep_y
     if motion == LEFT :
         prestep_x = x
-        x -= 3
+        x -= 5
     if motion == RIGHT :
         prestep_x = x
-        x += 3
+        x += 5
     if motion == UP :
        prestep_y = y
-       y -= 3
+       y -= 5
     if motion == DOWN :
         prestep_y = y
-        y += 3
+        y += 5
     if motion == D_R :
         prestep_x = x
         prestep_y = y
