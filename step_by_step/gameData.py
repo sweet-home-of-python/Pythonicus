@@ -30,10 +30,9 @@ class GameObject:
  
 class Person:
    
-    
     pos = 0,0
     size = 10
-    speed = 1
+    speed = 2
 
     def __init__(self,size=10):
         self.class_name = 'Person' + str(len(GameObject.objects))
@@ -99,11 +98,12 @@ class Collision:
         for objkey in GameObject.objects:
             if GameObject.objects[objkey].class_tag == 'staticObject':
                 x1,y1,x2,y2 = GameObject.objects[objkey].pos
-                if (x in range(x1-Person.size,x1+x2+Person.size) 
-                     and y in range(y1-Person.size,y1+y2+Person.size) 
-                     or x in range(x1-Person.size,x1+x2+Person.size) 
-                     and y in range(y1-Person.size,y1+y2+Person.size)) : #обработка столкновения
-                     return True
+                if (x in range(x1-Person.size*2,x1+x2+Person.size*2) 
+                    and y in range(y1-Person.size*2,y1+y2+Person.size*2) 
+                    or x in range(x1-Person.size*2,x1+x2+Person.size*2) 
+                    and y in range(y1-Person.size*2,y1+y2+Person.size*2)) : #обработка столкновения
+                    print(objkey)
+                    return True
                  #else: return False
 
 
