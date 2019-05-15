@@ -31,8 +31,8 @@ while Play:
             if i.key in [pygame.K_LEFT, pygame.K_RIGHT, pygame.K_UP, pygame.K_DOWN]:
                 motion = STOP
     if (x in range(x1-50,x1+x2+50) 
-                 and y in range(y1-30,y1+y2+30) 
-                 or x in range(x1-30,x1+x2+30) 
+                 and y in range(y1-50,y1+y2+50) 
+                 or x in range(x1-50,x1+x2+50) 
                  and y in range(y1-50,y1+y2+50)):
        if motion == LEFT :
            if y+50 != y1 and y-50 != y2:

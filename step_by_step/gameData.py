@@ -4,10 +4,24 @@
 #
 #
 #
-#
-#
+
+
 from pygame import draw
 from random import randint
+
+# Глобальные переменные
+
+colors = {'black': (0,0,0),
+          'white':(255,255,255),
+          'red':(255,0,0),
+          'green':(0,255,0),
+          'blue':(0,0,255)
+         }
+
+
+
+
+
 
 class GameObject:
     objects = {}
@@ -50,15 +64,9 @@ def processingCollision(coords):
         x1,y1,x2,y2 = GameObject.objects[objkey].pos
         if GameObject.objects[objkey].class_tag == 'staticObject':
              if (x in range(x1-50,x1+x2+50) 
-                 and y in range(y1-30,y1+y2+30) 
-                 or x in range(x1-30,x1+x2+30) 
+                 and y in range(y1-50,y1+y2+50) 
+                 or x in range(x1-50,x1+x2+50) 
                  and y in range(y1-50,y1+y2+50)) : #обработка столкновения
                  return True
              #else: return False
 
-colors = {'black': (0,0,0),
-          'white':(255,255,255),
-          'red':(255,0,0),
-          'green':(0,255,0),
-          'blue':(0,0,255)
-         }
