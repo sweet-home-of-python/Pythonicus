@@ -1,8 +1,12 @@
 {
   "ExpandedNodes": [
     "",
+    "\\collision",
+    "\\colors",
+    "\\currency_value",
+    "\\others",
     "\\step_by_step"
   ],
-  "SelectedNode": "\\step_by_step\\gameData.py",
+  "SelectedNode": "\\step_by_step\\udav_vazgniy.py",
   "PreviewInSolutionExplorer": false
 }
