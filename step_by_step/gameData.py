@@ -17,12 +17,7 @@ class StaticObject(GameObject):
         self.pos = (0,0,0,0)
         self.type = 'rect'
         #self.params = [color,opacity]
-        self.colors = {'black': (0,0,0),
-                       'white':(255,255,255),
-                       'red':(255,0,0),
-                       'green':(0,255,0),
-                       'blue':(0,0,255)
-                       }
+        
 
         self.types = ('rect',
                       'circle')
@@ -38,7 +33,7 @@ class StaticObject(GameObject):
 
     def draw(self,screen):
         if self.type == 'rect':
-            draw.rect(screen, self.colors['black'], self.pos)
+            draw.rect(screen, colors['black'], self.pos)
 
 
 def processingCollision(coords):
@@ -52,5 +47,12 @@ def processingCollision(coords):
                  and y in range(y1-50,y1+y2+50)) : #обработка столкновения
                  return True
              #else: return False
+
+colors = {'black': (0,0,0),
+          'white':(255,255,255),
+          'red':(255,0,0),
+          'green':(0,255,0),
+          'blue':(0,0,255)
+         }
             
 
