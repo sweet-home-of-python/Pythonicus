@@ -19,6 +19,10 @@ while Play:
             motion = UP
         if keys[pygame.K_DOWN]:
             motion = DOWN
+        if keys[pygame.K_LEFT] and keys[pygame.K_RIGHT]:
+            motion = rad_p
+        if keys[pygame.K_UP] and keys[pygame.K_DOWN]:
+            motion = rad_m
         if keys[pygame.K_DOWN] and keys[pygame.K_RIGHT]:
             motion = D_R
         if keys[pygame.K_DOWN] and keys[pygame.K_LEFT]:
@@ -30,30 +34,70 @@ while Play:
         elif i.type == pygame.KEYUP:
             if i.key in [pygame.K_LEFT, pygame.K_RIGHT, pygame.K_UP, pygame.K_DOWN]:
                 motion = STOP
-    if (x in range(x1-50,x1+x2+50) 
-                 and y in range(y1-50,y1+y2+50) 
-                 or x in range(x1-50,x1+x2+50) 
-                 and y in range(y1-50,y1+y2+50)):
+    if (x in range(x1-r,x1+x2+r +1) 
+                 and y in range(y1-r+20,y1+y2+r-20) 
+                 or x in range(x1-r+20,x1+x2+r-20) 
+                 and y in range(y1-r,y1+y2+r+1)):
        if motion == LEFT :
-           if y+50 != y1 and y-50 != y2:
+           if y+r != y1 and y-r != y1+y2:
                 if prestep_x > x:
                     x1-=5
        if motion == RIGHT:
-           if y+50 != y1 and y-50 != y2:
+           if y+r != y1 and y-r != y1+y2:
              if prestep_x < x:
                 x1+=5
        if motion == UP:
-           if x+50 != x1 and x-50 != x2:
+           if x+r != x1 and x-r != x1+x2:
                if prestep_y > y:
                  y1-=5
        if motion == DOWN:
-           if x+50 != x1 and x-50 != x2:
-            if prestep_y < y:
+           if x+r != x1 and x-r != x1+x2:
+               if prestep_y < y:
                 y1+=5
-               
-           
-            
-
+       if motion == D_R:
+            if x<x1:
+               if  prestep_y < y:
+                   if y+r != y1 and y-r != y1+y2:
+                     if prestep_x < x:
+                        x1+=5
+            if x>x1:
+               if  prestep_y < y:
+                   if y+r != y1 and y-r != y1+y2:
+                     if prestep_x < x:
+                        y1+=5
+       if motion == D_L:
+           if x>x1+x2:
+               if  prestep_y < y:
+                    if y+r != y1 and y-r != y1+y2:
+                        if prestep_x > x:
+                            x1-=5
+           if x<x1+x2:
+               if  prestep_y < y:
+                   if y+r != y1 and y-r != y1+y2:
+                     if prestep_x > x:
+                        y1+=5
+       if motion == U_R:
+           if x<x1:
+               if  prestep_y > y:
+                   if y+r != y1 and y-r != y1+y2:
+                     if prestep_x < x:
+                        x1+=5
+           if x>x1:    
+               if  prestep_x < x:
+                   if x+r != x1 and x-r != x1+x2:
+                       if prestep_y > y:
+                            y1-=5
+       if motion == U_L:
+           if x>x1+x2:
+               if  prestep_y > y:
+                   if y+r != y1 and y-r != y1+y2:
+                        if prestep_x > x:
+                            x1-=5
+           if x<x1+x2:    
+               if  prestep_x > x:
+                   if x+r != x1 and x-r != x1+x2:
+                       if prestep_y > y:
+                            y1-=5
     if motion == LEFT :
         prestep_x = x
         x -= 5
@@ -86,5 +130,8 @@ while Play:
         prestep_y = y
         y -= 5
         x -= 5
+    if motion == rad_p :
+        r+=1
+    if motion == rad_m :
+        r-=1
     clock.tick(FPS)
-
