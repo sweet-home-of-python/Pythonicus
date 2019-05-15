@@ -81,8 +81,8 @@ def processingCollision(coords):
         if GameObject.objects[objkey].class_tag == 'staticObject':
              
              if (x in range(x2-50,x2+x3+50) 
-                 and y in range(y2-30,y2+y3+30) 
-                 or x in range(x2-30,x2+x3+30) 
+                 and y in range(y2-50,y2+y3+50) 
+                 or x in range(x2-50,x2+x3+50) 
                  and y in range(y2-50,y2+y3+50)) : #обработка столкновения
                  return True
                 
