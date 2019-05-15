@@ -1,12 +1,11 @@
 import pygame
 import time 
 from pomoshnik_udavu import *
-DinamicObject()
+StaticObject()
 while Play:
     sc.fill(WHITE)
     pygame.draw.circle(sc, some, (x, y), r)
-    for obj_tag in GameObject.objects:
-        GameObject.objects[obj_tag].draw(sc)
+    pygame.draw.rect(sc, black, (x1,y1,x2,y2))
     pygame.display.update()
     for i in pygame.event.get():
         if i.type == pygame.QUIT:
@@ -31,6 +30,30 @@ while Play:
         elif i.type == pygame.KEYUP:
             if i.key in [pygame.K_LEFT, pygame.K_RIGHT, pygame.K_UP, pygame.K_DOWN]:
                 motion = STOP
+    if (x in range(x1-50,x1+x2+50) 
+                 and y in range(y1-30,y1+y2+30) 
+                 or x in range(x1-30,x1+x2+30) 
+                 and y in range(y1-50,y1+y2+50)):
+       if motion == LEFT :
+           if y+50 != y1 and y-50 != y2:
+                if prestep_x > x:
+                    x1-=5
+       if motion == RIGHT:
+           if y+50 != y1 and y-50 != y2:
+             if prestep_x < x:
+                x1+=5
+       if motion == UP:
+           if x+50 != x1 and x-50 != x2:
+               if prestep_y > y:
+                 y1-=5
+       if motion == DOWN:
+           if x+50 != x1 and x-50 != x2:
+            if prestep_y < y:
+                y1+=5
+               
+           
+            
+
     if motion == LEFT :
         prestep_x = x
         x -= 5

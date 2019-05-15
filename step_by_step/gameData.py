@@ -53,5 +53,4 @@ def processingCollision(coords):
                  and y in range(y1-50,y1+y2+50)) : #обработка столкновения
                  return True
              #else: return False
-            
 
