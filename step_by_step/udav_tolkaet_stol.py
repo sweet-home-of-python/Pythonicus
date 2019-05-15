@@ -45,62 +45,86 @@ while Play:
         if motion == LEFT :
            if y+r != y1 and y-r != y1+y2:
                 if prestep_x > x:
+                    if x-r<x1+x2:
+                        x=x1+x2+r
                     x1-=int(r/50*5)
         if motion == RIGHT:
            if y+r != y1 and y-r != y1+y2:
              if prestep_x < x:
+                if x+r>x1:
+                    x=x1-r
                 x1+=int(r/50*5)
         if motion == UP:
            if x+r != x1 and x-r != x1+x2:
                if prestep_y > y:
+                 if y-r<y1+y2:
+                    y=y1+y2+r
                  y1-=int(r/50*5)
         if motion == DOWN:
            if x+r != x1 and x-r != x1+x2:
                if prestep_y < y:
-                y1+=int(r/50*5)
+                   if y+r>y1:
+                    y=y1-r
+                   y1+=int(r/50*5)
         if motion == D_R:
             if x<x1:
                if  prestep_y < y:
                    if y+r != y1 and y-r != y1+y2:
                      if prestep_x < x:
+                        if x+r>x1:
+                            x=x1-r
                         x1+=int(r/50*5)
             if x>x1:
                if  prestep_y < y:
                    if y+r != y1 and y-r != y1+y2:
                      if prestep_x < x:
-                        y1+=int(r/50*5)
+                         if y+r>y1:
+                            y=y1-r
+                         y1+=int(r/50*5)
         if motion == D_L:
            if x>x1+x2:
                if  prestep_y < y:
                     if y+r != y1 and y-r != y1+y2:
                         if prestep_x > x:
+                            if x-r<x1+x2:
+                                x=x1+x2+r
                             x1-=int(r/50*5)
            if x<x1+x2:
                if  prestep_y < y:
                    if y+r != y1 and y-r != y1+y2:
                      if prestep_x > x:
+                        if y+r>y1:
+                           y=y1-r
                         y1+=int(r/50*5)
         if motion == U_R:
            if x<x1:
                if  prestep_y > y:
                    if y+r != y1 and y-r != y1+y2:
                      if prestep_x < x:
+                        if x+r>x1:
+                           x=x1-r
                         x1+=int(r/50*5)
            if x>x1:    
                if  prestep_x < x:
                    if x+r != x1 and x-r != x1+x2:
                        if prestep_y > y:
+                            if y-r<y1+y2:
+                                y=y1+y2+r
                             y1-=int(r/50*5)
         if motion == U_L:
            if x>x1+x2:
                if  prestep_y > y:
                    if y+r != y1 and y-r != y1+y2:
                         if prestep_x > x:
+                            if x-r<x1+x2:
+                                x=x1+x2+r
                             x1-=int(r/50*5)
            if x<x1+x2:    
                if  prestep_x > x:
                    if x+r != x1 and x-r != x1+x2:
                        if prestep_y > y:
+                            if y-r<y1+y2:
+                                y=y1+y2+r
                             y1-=int(r/50*5)
     if motion == LEFT :
         if a ==1:
