@@ -19,7 +19,7 @@ U_L ="ul"
 prestep_x = W // 2
 prestep_y = H // 2
 pygame.init()
-sc = pygame.display.set_mode((W, H))
+sc = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
 clock = pygame.time.Clock()
 x = W // 2
 y = H // 2
@@ -36,6 +36,9 @@ while Play:
         if i.type == pygame.QUIT:
             Play = False
         keys = pygame.key.get_pressed()
+        if keys[pygame.K_ESCAPE]:
+            Play = False
+            pygame.quit()
         if keys[pygame.K_LEFT]:
             motion = LEFT
         if keys[pygame.K_RIGHT]:

@@ -1,9 +1,16 @@
+# GameData Версия 0.5
+# 
+#
+#
+#
+#
+#
+#
 from pygame import draw
 from random import randint
 
 class GameObject:
     objects = {}
-    key_objects = []
  
 
 
@@ -18,12 +25,7 @@ class StaticObject(GameObject):
         self.pos = (0,0,0,0)
         self.type = 'rect'
         #self.params = [color,opacity]
-        self.colors = {'black': (0,0,0),
-                       'white':(255,255,255),
-                       'red':(255,0,0),
-                       'green':(0,255,0),
-                       'blue':(0,0,255)
-                       }
+        
 
         self.types = ('rect',
                       'circle')
@@ -31,7 +33,7 @@ class StaticObject(GameObject):
         self.random_rect()
 
         GameObject.objects[self.class_name] = self
-        GameObject.key_objects.append(self.class_name) 
+       
 
     def random_rect(self):
         self.type = 'rect'
@@ -39,7 +41,7 @@ class StaticObject(GameObject):
 
     def draw(self,screen):
         if self.type == 'rect':
-            draw.rect(screen, self.colors['black'], self.pos)
+            draw.rect(screen, colors['black'], self.pos)
 
 
 def processingCollision(coords):
@@ -54,3 +56,9 @@ def processingCollision(coords):
                  return True
              #else: return False
 
+colors = {'black': (0,0,0),
+          'white':(255,255,255),
+          'red':(255,0,0),
+          'green':(0,255,0),
+          'blue':(0,0,255)
+         }
