@@ -11,7 +11,7 @@ while o != 1 :
     a = 1
     b = 1
     c = 1
-    speed = 6
+    speed = 1
     while 1:
         sc.fill((x1,x2,x3))
         if a ==1:
