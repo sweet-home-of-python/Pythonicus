@@ -16,18 +16,18 @@ Play = True
 sc.fill(white)
 roll = False
 direction = 0
-speed =5
-size = 200
-luck =20
+speed =5 # задаешь удаву ускорение
+size = 200  # задаешь размеры ползучей сучары
+luck =20    # задаешь как далеко он сможет проползти в одном направлении, если повезет конечно
 color = (random.randint(0,255),random.randint(0,255),random.randint(0,255))
 while Play:
     
     if roll == False or roll == True :
         
-        step2 =  y + random.randint(0,luck*2)
+        step2 =  y + random.randint(0,luck)
         step1 = x + random.randint(0,luck)
         step3 = x - random.randint(0,luck)
-        step4 = y - random.randint(0,luck*2)
+        step4 = y - random.randint(0,luck)
     pygame.draw.rect(sc, color, (x,y,size,size))
     pygame.display.update()
     for i in pygame.event.get():
