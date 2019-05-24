@@ -16,7 +16,7 @@ Play = True
 sc.fill(white)
 roll = False
 direction = 0
-speed =5 # задаешь удаву ускорение
+speed =5 # задаешь удаву ускорение!
 size = 200  # задаешь размеры ползучей сучары
 luck =20    # задаешь как далеко он сможет проползти в одном направлении, если повезет конечно
 color = (random.randint(0,255),random.randint(0,255),random.randint(0,255))
