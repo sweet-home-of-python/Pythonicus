@@ -1,8 +1,16 @@
 {
   "ExpandedNodes": [
     "",
+    "\\collision",
+    "\\colors",
+    "\\currency_value",
+    "\\line_finder",
+    "\\line_finder\\images",
+    "\\others",
+    "\\smart-sketch-master",
+    "\\smart-sketch-master\\backend",
     "\\step_by_step"
   ],
-  "SelectedNode": "\\step_by_step\\udav_tolkaet_stol.py",
+  "SelectedNode": "\\line_finder\\main.py",
   "PreviewInSolutionExplorer": false
 }
