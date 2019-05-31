@@ -38,7 +38,35 @@ sp_yx = []
 w = 0
 q = 0 
 sp_main = []
-      
+ 
+
+def set_direction(x,y,s):
+    
+    if direction == 1 :
+        if x < step1:
+            x+=speed
+        else:
+            s =0
+    if direction == 2 :
+        if y < step2:
+            y+=speed
+        else:
+            s =0
+    if direction == 3 :
+        if x > step3:
+            x-=speed 
+        else:
+            s =0 
+    if direction == 4 :
+        if y > step4:
+            y-=speed
+        else:
+            s = 0
+    return x,y,s
+
+def choise_direct():
+    pass
+
    
 while Play:
     sp_yx=[x,y]
@@ -75,20 +103,25 @@ while Play:
         Play = False
        elif i.type == pygame.KEYDOWN:
         if i.key == pygame.K_LEFT:
-            pass
+            sc.fill(white)
+            sp_xy = []
+            sp_main=[]
+
     sp_xy = [x,y]
     sp_main.append(sp_xy)
+    
+    
     if a ==1:
         direction = random.choice([1,2,3,4])
         s = 1
         a=0
-    if x > 1200- size*2:
+    if x > 1200 - size*2:
         direction = random.choice([2,3,4])
         s = 1
     if y > 600 - size*2:
         direction = random.choice([1,4,3])
         s = 1
-    if x < +size*2:
+    if x < + size * 2:
         direction = random.choice([1,2,4])
         s = 1
     if y < +size*2:
@@ -97,26 +130,7 @@ while Play:
 
     
 
-    if direction == 1 :
-        if x < step1:
-            x+=speed
-        else:
-            s =0
-    if direction == 2 :
-        if y < step2:
-            y+=speed
-        else:
-            s =0
-    if direction == 3 :
-        if x > step3:
-            x-=speed 
-        else:
-            s =0 
-    if direction == 4 :
-        if y > step4:
-            y-=speed
-        else:
-            s =0
+    x,y,s = set_direction(x,y,s)
      
         
   

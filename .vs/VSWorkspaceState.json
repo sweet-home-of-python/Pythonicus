@@ -1,9 +1,14 @@
 {
   "ExpandedNodes": [
     "",
+    "\\collision",
+    "\\colors",
+    "\\currency_value",
+    "\\line_finder\\images",
     "\\polzuchii",
+    "\\smart-sketch-master\\backend",
     "\\step_by_step"
   ],
-  "SelectedNode": "\\polzuchii\\udav_kruchennii.py",
+  "SelectedNode": "\\step_by_step\\gameData.py",
   "PreviewInSolutionExplorer": false
 }
