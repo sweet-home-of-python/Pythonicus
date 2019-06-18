@@ -1,14 +1,12 @@
 {
   "ExpandedNodes": [
     "",
-    "\\collision",
-    "\\colors",
-    "\\currency_value",
-    "\\line_finder\\images",
-    "\\polzuchii",
-    "\\smart-sketch-master\\backend",
-    "\\step_by_step"
+    "\\Grock-World",
+    "\\Глобальные параметры (C:\\Users\\Ярослав\\AppData\\Local\\Microsoft\\VisualStudio\\16.0_653b6d4d\\OpenFolder)",
+    "\\Локальные параметры (.vs)",
+    "\\Локальные параметры (.vs)\\Pythonicus",
+    "\\Локальные параметры (.vs)\\Pythonicus\\v16"
   ],
-  "SelectedNode": "\\step_by_step\\gameData.py",
+  "SelectedNode": "\\Локальные параметры (.vs)\\Pythonicus\\v16\\.suo",
   "PreviewInSolutionExplorer": false
 }
