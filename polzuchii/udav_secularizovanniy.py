@@ -100,14 +100,14 @@ sc.fill(colors['white']) #Замалафили экран ъУъ СУКА!
 udav = Udav('udavsk')
 
 Play = True # Разрешение на ползучесть
-i = random.randint(0,3)
+i = 1
 while Play:
     udav.movement()
     rand = random.randint(0,255)
     udav.draw_rect(sc,colors['black'])
     if i <= 0:
         udav.random_direct()
-        i = random.randint(0,3)
+        i = random.randint(2,4)
     i -= 1
 
     
