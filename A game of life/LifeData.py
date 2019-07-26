@@ -53,7 +53,7 @@ class Person:
         if move == 7: y-=10
         if move == 8: x-=10; y-=10
 
-        self.poposition = x,y
+        self.position = x,y
 
     def sensor(self):
         pass

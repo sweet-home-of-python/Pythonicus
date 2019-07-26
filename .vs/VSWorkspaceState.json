@@ -1,8 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Grock-World"
+    "\\A game of life",
+    "\\others",
+    "\\polzuchii"
   ],
-  "SelectedNode": "\\Grock-World\\fibonachi.py",
+  "SelectedNode": "\\A game of life\\LifeData.py",
   "PreviewInSolutionExplorer": false
 }

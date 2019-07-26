@@ -31,11 +31,10 @@ Play = True # Запуск
 while Play:
     sc.fill(colors['white']) # Заливка
     pers.movenment()
-
     pygame.draw.rect(sc,colors['black'],pos_to_draw(pers.position))
-      
     pygame.display.update()
-
+    time.sleep(0.5)
+    print("loh")
 
 
 
