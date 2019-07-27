@@ -56,7 +56,7 @@ class Person:
         self.position = x,y
 
     def sensor(self):
-        pass
+        print("hui")
 
     def life_control(self):
         pass
