@@ -61,7 +61,7 @@ class Person:
         print("hui")
 
     def life_control(self):
-        pass
+        print('poseluy mou zalupu')
 
 
 
