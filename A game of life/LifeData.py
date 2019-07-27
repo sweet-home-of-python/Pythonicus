@@ -42,8 +42,8 @@ class Person:
         return rand.choice(genders)
 
     def movenment(self):
-        move_patterns = [0,1,2,3,4,5,6,7,8]
-        move = rand.choice(move_patterns)
+        move_direction = [0,1,2,3,4,5,6,7,8] # Направления дввижения. 0 - лево
+        move = rand.choice(move_direction)
         x,y = self.position
 
         if move == 1: x-=10
@@ -70,6 +70,10 @@ class Food:
     def __init__(self):
         
         self.position = 1,1
+
+class Spawner:
+    '''Спавнит объекты'''
+    pass
 
 
 
