@@ -58,7 +58,7 @@ class Person:
         self.position = x,y
 
     def sensor(self):
-        print("sam pidor")
+        print("pidor")
 
     def life_control(self):
         print('poseluy mou zalupu')
