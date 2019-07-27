@@ -62,6 +62,7 @@ class Person:
 
     def life_control(self):
         print('poseluy mou zalupu')
+        print('incest with young boys')
 
 
 
