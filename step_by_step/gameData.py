@@ -26,6 +26,15 @@ class Color:
 
 class GameObject:
     objects = {}
+
+    statistic = {'personObject':0,
+                 'staticObject':0,
+                 'dynamicObject':0
+                 }
+
+    def get_object(obj):
+        GameObject.objects[obj.class_name] = obj
+        GameObject.statistic[obj.class_tag] = GameObject.statistic[obj.class_tag] + 1
     
  
 class Person:
@@ -35,15 +44,18 @@ class Person:
     speed = 2
 
     def __init__(self,size=10):
-        self.class_name = 'Person' + str(len(GameObject.objects))
-        self.class_tag = 'PersonObject'
+        self.class_name = 'Person' + GameObject.statistic['personObject']
+        self.class_tag = 'personObject'
         self.desc = ''
         self.pos = 10,10
         self.size = size
         self.coord = self.set_coord()
         self.prestep = self.pos
 
-        GameObject.objects[self.class_name] = self
+
+        GameObject.get_object(self)
+
+       
    
     def set_coord(self):
         x1,y1 = self.pos
@@ -57,9 +69,13 @@ class Person:
         draw.rect(screen, Color.random_color(), self.set_coord())
 
 class StaticObject:
+    class_name = ''
+    class_tag = ''
+    desc = ''
+
     def __init__(self,desc = 'static object'):
         # Инициализация
-        self.class_name = 'staticObject' + str(len(GameObject.objects))
+        self.class_name = 'staticObject' + GameObject.statistic['staticObject']
         self.class_tag = 'staticObject'
         self.desc = desc
                           
@@ -69,14 +85,32 @@ class StaticObject:
 
         self.random_rect()
         
-        GameObject.objects[self.class_name] = self
-       
+        GameObject.get_object(self)
+
 
     def random_rect(self):
         self.pos = (randint(0,1000),randint(0,600), randint(0,500), randint(0,500)) 
 
     def draw(self,screen):
         draw.rect(screen, Color.colors['black'], self.pos)
+
+
+class DynamicObject:
+    class_name = ''
+    class_tag = ''
+    desc = ''
+
+    def __init__(self,desc = 'static object'):
+                # Инициализация
+        self.class_name = 'dynamicObject' + GameObject.statistic['dynamicObject']
+        self.class_tag = 'dynamicObject'
+        self.desc = desc
+        
+        GameObject.get_object(self)
+
+       
+
+
 
 class Settings:
     '''Настройки игры. Сюда входят параметры экрана и управления'''
@@ -105,5 +139,3 @@ class Collision:
                     print(objkey)
                     return True
                  #else: return False
-
-
