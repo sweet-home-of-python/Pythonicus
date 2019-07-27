@@ -14,6 +14,7 @@ class Objects:
         Objects.statistic[obj.class_tag] = Objects.statistic[obj.class_tag] + 1
 
 
+
 class Person:
     def __init__(self):
         self.class_name = 'Person' + str(Objects.statistic['personObject'])
@@ -30,6 +31,7 @@ class Person:
 
         # Местоположение
         self.position = 500,300
+        self.step = 20
 
 
         Objects.get_object(self)
@@ -45,13 +47,13 @@ class Person:
         x,y = self.position
 
         if move == 1: x-=10
-        if move == 2: x-=10; y+=10
+        if move == 2: x-=10; y+=self.step
         if move == 3: y+=10
-        if move == 4: x+=10; y+=10
+        if move == 4: x+=10; y+=self.step
         if move == 5: x+=10
-        if move == 6: x+=10; y-=10
+        if move == 6: x+=10; y-=self.step
         if move == 7: y-=10
-        if move == 8: x-=10; y-=10
+        if move == 8: x-=10; y-=self.step
 
         self.position = x,y
 
@@ -59,7 +61,7 @@ class Person:
         print("хуй удава больше хаты")
 
     def life_control(self):
-        pass
+        print('poseluy mou zalupu')
 
 
 

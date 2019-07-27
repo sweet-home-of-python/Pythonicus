@@ -47,7 +47,11 @@ while Play:
     pygame.draw.rect(sc,colors['black'],pos_to_draw(pers6.position))
     pygame.display.update()
     time.sleep(0.2)
-    print("loh")
+   
+
+
+
+    clock.tick(FPS)
 
 
 
