@@ -29,7 +29,7 @@ class Person:
         self.alive = True
 
         # Местоположение
-        self.position = 100,200
+        self.position = 500,300
 
 
         Objects.get_object(self)
