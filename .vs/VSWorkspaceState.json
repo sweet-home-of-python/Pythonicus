@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\A game of life"
+    "\\A game of life",
+    "\\step_by_step"
   ],
-  "SelectedNode": "\\A game of life\\life.py",
+  "SelectedNode": "\\A game of life\\LifeData.py",
   "PreviewInSolutionExplorer": false
 }

@@ -1,6 +1,8 @@
 import random as rand
 
 
+
+    
 class Objects:
     objects = {}
 
@@ -25,7 +27,7 @@ class Person:
         self.gender = self.random_gender()
         
         # параметры организма
-        self.health = 10
+        self.health = 100
         self.starve = 10
         self.alive = True
 
@@ -46,7 +48,8 @@ class Person:
         move = rand.choice(move_patterns)
         x,y = self.position
 
-        if move == 1: x-=10
+        if move == 1: 
+            x-=10
         if move == 2: x-=10; y+=self.step
         if move == 3: y+=10
         if move == 4: x+=10; y+=self.step
@@ -58,13 +61,18 @@ class Person:
         self.position = x,y
 
     def sensor(self):
-        print("pidor")
+        
+        cell = 0
+        x,y = self.position
+        
 
     def life_control(self):
         print('poseluy mou zalupu')
         print('incest with young boys')
 
-
+    def pidor():
+        
+        
 
 class Food:
     def __init__(self):
