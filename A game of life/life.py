@@ -18,36 +18,33 @@ colors = {'black': (0,0,0),
            'white':(255,255,255),
            'red':(255,0,0),
            'green':(0,255,0),
-           'blue':(0,0,255)}
+           'blue':(0,0,255)} # цвета
 
 
-pers = Person()
-pers2 = Person()
-pers3 = Person()
-pers4 = Person()
-pers5 = Person()
-pers6 = Person()
+pers = Person("jake")# пиздюки
+pers2 = Person("fin")
+pers3 = Person("jake")
+pers4 = Person("fin")
+pers5 = Person("jake")
+pers6 = Person("fin")
+pers7 = Person("jake")
+pers8 = Person("fin")
+pers9 = Person("jake")
+pers10 = Person("fin")
 sc.fill(colors['white']) # Заливка
 
 Play = True # Запуск
 a = 0 
 while Play:
-    sc.fill(colors['white']) # Заливка
-    pers.movenment()
-    pers2.movenment()
-    pers3.movenment()
-    pers4.movenment()
-    pers5.movenment()
-    pers6.movenment()
-    pygame.draw.rect(sc,colors['black'],pos_to_draw(pers.position))
-    pygame.draw.rect(sc,colors['black'],pos_to_draw(pers2.position))
-    pygame.draw.rect(sc,colors['black'],pos_to_draw(pers3.position))
-    pygame.draw.rect(sc,colors['black'],pos_to_draw(pers4.position))
-    pygame.draw.rect(sc,colors['black'],pos_to_draw(pers5.position))
-    pygame.draw.rect(sc,colors['black'],pos_to_draw(pers6.position))
+    sc.fill(colors['white'])# Заливка
+    for obj_tag in Objects.objects: # обработка всех объектов
+        Objects.objects[obj_tag].movenment()
+        Objects.objects[obj_tag].draw(sc)
     pygame.display.update()
-    time.sleep(0.2)
+    time.sleep(0.1)
+    
    
+    
 
 
 
