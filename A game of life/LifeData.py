@@ -53,8 +53,7 @@ class Person():
         move = rand.choice(move_direction)
         x,y = self.position
 
-        if move == 1: 
-            x-=10
+        if move == 1: x-=10
         if move == 2: x-=10; y+=self.step
         if move == 3: y+=10
         if move == 4: x+=10; y+=self.step

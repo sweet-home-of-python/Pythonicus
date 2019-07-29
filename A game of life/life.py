@@ -42,12 +42,6 @@ while Play:
         Objects.objects[obj_tag].draw(sc)
     pygame.display.update()
     time.sleep(0.1)
-    
-   
-    
-
-
-
     clock.tick(FPS)
 
 
