@@ -1,12 +1,31 @@
 import random as rand
-from pygame import draw
+import pygame
+import time 
 
-colors = {'black': (0,0,0), # пока не скопировал сюда из основного кода не работа draw
-           'white':(255,255,255),
-           'red':(255,0,0),
-           'green':(0,255,0),
-           'blue':(0,0,255)}
 
+class Game():
+    def __init__(self):
+        self.colors = {'black': (0,0,0),
+                       'white':(255,255,255),
+                       'red':(255,0,0),
+                       'green':(0,255,0),
+                       'blue':(0,0,255)}
+
+        self.resolution = 1200,600  # размер экрана
+
+        self.fps_controller = pygame.time.Clock()
+    
+        
+    def refresh_screen(self):
+        """обновляем экран и задаем фпс"""
+        pygame.display.flip()
+        game.fps_controller.tick(23)
+
+class Cells():
+    pass
+
+class Cell(Cells):
+    pass
     
 class Objects:
     objects = {}
@@ -37,7 +56,7 @@ class Person():
         self.alive = True
 
         # Местоположение
-        self.position = 500,300
+        self.position = 500,300 # НУжно переделать
         self.step = 20
 
 
@@ -49,27 +68,36 @@ class Person():
         return rand.choice(genders)
 
     def movenment(self):
-        move_direction = [0,1,2,3,4,5,6,7,8] # Направления дввижения. 0 - лево
+        move_direction = [0,1,2,3,4,5,6,7,8] # Направления дввижения.  0 - лево
         move = rand.choice(move_direction)
         x,y = self.position
 
-        if move == 1: x-=10
-        if move == 2: x-=10; y+=self.step
-        if move == 3: y+=10
-        if move == 4: x+=10; y+=self.step
-        if move == 5: x+=10
-        if move == 6: x+=10; y-=self.step
-        if move == 7: y-=10
-        if move == 8: x-=10; y-=self.step
+        if move == 1: 
+            x-=10
+        if move == 2:
+           x-=10 
+           y+=self.step
+        if move == 3: 
+            y+=10
+        if move == 4: 
+            x+=10
+            y+=self.step
+        if move == 5: 
+            x+=10
+        if move == 6: 
+            x+=10
+            y-=self.step
+        if move == 7: 
+            y-=10
+        if move == 8: 
+            x-=10 
+            y-=self.step
 
         self.position = x,y
 
     def sensor(self):
         pass
-        
-    def draw(self,screen):
-        '''отрисовка пиздюка'''
-        draw.rect(screen,colors['black'],pos_to_draw(self.position)) # наверно надо будет тоже перенести в другой класс , чтобы не засорять класс перса 
+       
 
     def life_control(self):
         print('poseluy mou zalupu')
@@ -84,7 +112,10 @@ class Person():
                 del person1
         else:
            person = Person(person1.name + person2.name)
-         # Я не знаю как правильно это написать, создание нового перса, и еще не уверен что удаление персов тоже сработает
+         # Я не знаю как правильно это написать, создание нового перса, и еще
+         # не уверен что удаление персов тоже сработает
+
+
 
 class Food:
     def __init__(self):
@@ -96,9 +127,13 @@ class Spawner:
     pass
 
 
+class Drawer():
+    def drawObjects(self,object,screen):
+        '''Рисует принятый объект'''
+        pygame.draw.rect(screen,Game.colors['black'],self.pos_to_draw(object.position))
 
-def pos_to_draw(position):
-        '''Преобразует центральные координаты в координаты для квадрата'''
-        size = 10
-        x,y = position
-        return  x - size, y - size, size * 2, size * 2
+    def pos_to_draw(self, position):
+            '''Преобразует центральные координаты в координаты для квадрата'''
+            size = 10
+            x,y = position
+            return  x - size, y - size, size * 2, size * 2

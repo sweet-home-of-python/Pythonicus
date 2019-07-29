@@ -1,24 +1,16 @@
 
-import pygame
-import time 
+
 from LifeData import *
 
 
-# Параметры окна
-FPS = 60
-Resolution = 1200,600  # размер экрана
+game = Game()
+
 
 
 pygame.init()
-sc = pygame.display.set_mode(Resolution)
+sc = pygame.display.set_mode(game.resolution)
 clock = pygame.time.Clock()
 
-
-colors = {'black': (0,0,0),
-           'white':(255,255,255),
-           'red':(255,0,0),
-           'green':(0,255,0),
-           'blue':(0,0,255)} # цвета
 
 
 pers = Person("jake")# пиздюки
@@ -31,12 +23,12 @@ pers7 = Person("jake")
 pers8 = Person("fin")
 pers9 = Person("jake")
 pers10 = Person("fin")
-sc.fill(colors['white']) # Заливка
+#sc.fill(game.colors['white']) # Заливка
 
 Play = True # Запуск
 a = 0 
 while Play:
-    sc.fill(colors['white'])# Заливка
+    sc.fill(game.colors['white'])# Заливка
     for obj_tag in Objects.objects: # обработка всех объектов
         Objects.objects[obj_tag].movenment()
         Objects.objects[obj_tag].draw(sc)
