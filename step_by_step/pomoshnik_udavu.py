@@ -5,7 +5,7 @@ x1=700
 x2=100
 y1=300
 y2=100
-FPS = 60
+FPS = 100
 W = 1200  # ширина экрана
 H = 700  # высота экрана
 a = 0
@@ -33,6 +33,7 @@ y = H // 2
 r = 50
 Play = True 
 motion = STOP
+motion1 = STOP
 class GameObject:
     objects = {}
     key_objects = []

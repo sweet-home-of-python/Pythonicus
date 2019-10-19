@@ -1,17 +1,11 @@
 import socket
 
-sock = socket.socket()
-sock.bind(('', 9090))
-sock.listen(1)
-conn, addr = sock.accept()
-
-print ('connected:', addr)
+sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+sock.bind(('127.0.0.1',8888))
 
 while True:
-    data = conn.recv(1024).decode()
-    print(data)
-    if not data:
-        break
-    conn.send(data.encode())
-
-conn.close()
+    result = sock.recv(1024)
+    print(result.decode())
+    
+        
+sock.close()
