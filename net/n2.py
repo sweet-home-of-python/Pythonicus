@@ -1,15 +1,9 @@
 import socket
 
-sock = socket.socket()
-sock.connect(('localhost', 9090))
+
+sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+
 while True:
-    d = input()
-    sock.send(d.encode())
-    data = sock.recv(1024).decode()
-
-
-
-sock.close()
-
-print (data)
-
+    i = input().encode()
+    sock.sendto(i,('127.0.0.1',8888))
+    
